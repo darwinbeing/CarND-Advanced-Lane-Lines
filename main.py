@@ -18,6 +18,14 @@ for idx, fname in enumerate(images):
     image = mpimg.imread(fname)
     result = pipeline(image)
 
+    left_line.detected = False
+    left_line.recent_fits = []
+    left_line.best_fit = None
+
+    right_line.detected = False
+    right_line.recent_fits = []
+    right_line.best_fit = None
+
     # Plot the result
     f, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 9))
     f.tight_layout()
